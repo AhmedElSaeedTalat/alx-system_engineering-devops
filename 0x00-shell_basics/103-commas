@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -pmak ; echo
+ls -pmak | awk '{print $0 "\n"}'
