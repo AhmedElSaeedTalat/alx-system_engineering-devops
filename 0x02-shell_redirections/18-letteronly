@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -x -E '[A-Z]*[a-z]+[0-9]*' /etc/ssh/sshd_config 
+grep '[^a-zA-Z]' /etc/ssh/sshd_config 
