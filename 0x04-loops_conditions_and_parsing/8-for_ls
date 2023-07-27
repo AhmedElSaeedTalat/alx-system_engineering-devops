@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-#
+# print content of directory
+var=$(ls)
+for i in $var
+do
+	echo "$i"
+done
