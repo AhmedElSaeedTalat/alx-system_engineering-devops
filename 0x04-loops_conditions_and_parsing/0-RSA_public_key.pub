@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script to Create a RSA key pair
+
+ id_rsa.pub
