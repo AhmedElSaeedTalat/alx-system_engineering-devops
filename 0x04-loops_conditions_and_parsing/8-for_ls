@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # print content of directory
-var=$(ls)
-for i in $var
+for i in *
 do
 	echo "${i#[0-9]*-}"
 done
