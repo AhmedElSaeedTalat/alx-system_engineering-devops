@@ -2,4 +2,6 @@
 
 arg = ARGV[0]
 regex = /School/
-puts regex.match("#{arg}")
+matches = arg.scan(regex)
+matches.each { |match| print match }
+print "\n"
