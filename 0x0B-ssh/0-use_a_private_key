@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # script to connect to the server
-ssh-copy-id ubuntu@52.23.178.138
-ssh ubuntu@52.23.178.138
+ssh -i ~/.ssh/school ubuntu@52.23.178.138
