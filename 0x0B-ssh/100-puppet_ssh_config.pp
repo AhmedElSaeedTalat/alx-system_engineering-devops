@@ -5,6 +5,6 @@ ensure  => 'present',
 content => "Host *\n\
 				PasswordAuthentication	no\n\
 				IdentityFile	~/.ssh/school",
-mode    => '0744'
+mode    => '0600'
 }
 }
