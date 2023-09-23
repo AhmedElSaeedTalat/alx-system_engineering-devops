@@ -1,3 +1,4 @@
+#file to create config file
 node default {
 file {'/home/vagrant/.ssh/config':
 ensure  => 'present',
