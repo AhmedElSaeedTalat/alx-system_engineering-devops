@@ -8,5 +8,5 @@ else
 	ip=$2
 	usr=$3
 	key=$4
-	scp -i "$key" "$file_path" "$usr"@"$ip":~
+	scp -i "$key" "$file_path" "$usr"@"$ip":~/
 fi
