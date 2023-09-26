@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#script to redired
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+replacable="# SSL configuration"
+replace_With="rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "s|$replacable|$replace_With|g" /etc/nginx/sites-available/default
+replacable1="# Add index.php to the list if you are using PHP"
+replace_With1="error_page 404 /error.html;"
+sudo sed -i "s|$replacable1|$replace_With1|g" /etc/nginx/sites-available/default
+sudo touch /var/www/html/error.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error.html
+sudo service nginx restart
