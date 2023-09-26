@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#script to redired
+#!/usr/bin/env bash
+#script to redired
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+replacable="# SSL configuration"
+replace_With="rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "s|$replacable|$replace_With|g" /etc/nginx/sites-available/default
+sudo service nginx restart
