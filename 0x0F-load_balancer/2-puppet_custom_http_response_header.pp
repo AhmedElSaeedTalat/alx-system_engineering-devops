@@ -1,17 +1,10 @@
 #script o add header
 node default {
-    package {'nginx':
-        ensure   => 'installed',
-        provider => 'apt'
-    }
     exec {'exec':
-        command => "sed -i 's|# First attempt to serve request as file, then|add_header X-Served-By \$hostname;|g'\
-/etc/nginx/sites-available/default",
-        path    => '/usr/bin',
-    }
-    exec {'service':
-        command => 'service nginx start',
-        path    => '/usr/sbin:/usr/bin',
-        require => Package['nginx']
+        command  => 'apt-get -y update;
+        apt-get -y install nginx;
+        sed -i "s|# First attempt to serve request as file, then|add_header X-Served-By \$hostname;|g" /etc/nginx/sites-available/default;
+        service nginx restart',
+        provider => shell
     }
 }
