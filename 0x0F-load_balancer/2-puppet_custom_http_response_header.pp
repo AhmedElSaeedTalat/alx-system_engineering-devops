@@ -10,7 +10,7 @@ node default {
         path    => '/usr/bin',
     }
     exec {'service':
-        command => 'service nginx restart',
+        command => 'service nginx start',
         path    => '/usr/sbin:/usr/bin',
         require => Package['nginx']
     }
