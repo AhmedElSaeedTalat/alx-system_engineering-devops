@@ -6,7 +6,7 @@ node default {
     }
     exec {'exec':
         command => "sed -i 's|# First attempt to serve request as file, then|add_header X-Served-By \$hostname;|g'\
- /etc/nginx/sites-available/default",
+/etc/nginx/sites-available/default",
         path    => '/usr/bin',
     }
     exec {'service':
