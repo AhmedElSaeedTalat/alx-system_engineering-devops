@@ -5,7 +5,6 @@
 func () {
     if [ -z "$1" ]
     then
-		echo 'no arg';
     	exit
     fi
 	domain=$1
