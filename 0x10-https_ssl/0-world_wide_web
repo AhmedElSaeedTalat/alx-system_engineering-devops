@@ -3,10 +3,6 @@
 
 
 func () {
-    if [ -z "$1" ]
-    then
-    	exit
-    fi
 	domain=$1
 	if [ -z "$2" ]
 	then
