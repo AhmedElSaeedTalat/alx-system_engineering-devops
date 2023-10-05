@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #script to make a request when nginx not working
 sudo service nginx start
-rm -f rm -f /run/nginx.pid
+rm -f /run/nginx.pid
