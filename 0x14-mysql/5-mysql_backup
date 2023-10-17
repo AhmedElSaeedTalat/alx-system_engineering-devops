@@ -4,4 +4,4 @@
 today=$(date +%d-%m-%y)
 sudo mysqldump -uroot -p"$1" --all-databases > backup.sql
 file_name="$today.tar.gz"
-tar -cvf "$file_name" backup.sql
+tar -czvf "$file_name" backup.sql
