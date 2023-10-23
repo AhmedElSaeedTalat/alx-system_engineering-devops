@@ -36,9 +36,9 @@ if __name__ == "__main__":
             list_obects.append({'username': usr_name,
                                 'task': task['title'],
                                 'completed': task['completed']})
-        list_obects.append({'username': usr_name,
-                            'task': task['title'],
-                            'completed': task['completed']})
-        employees_dict[id] = list_obects
+    list_obects.append({'username': usr_name,
+                        'task': task['title'],
+                        'completed': task['completed']})
+    employees_dict[id] = list_obects
     with open(file_name, 'w') as f:
         json.dump(employees_dict, f)
