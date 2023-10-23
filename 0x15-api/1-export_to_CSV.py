@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ script that uses API to get info about given empliyee """
+import csv
 import requests
 import sys
-import csv
 
 
 if __name__ == "__main__":
@@ -21,5 +21,5 @@ if __name__ == "__main__":
         writer = csv.writer(f)
         for task in tdo_res:
             if task['userId'] == int(employee_id):
-                writer.writerow([task['userId'], usr, task['completed'],
-                                task['title']])
+                writer.writerow([str(task['userId']), usr,
+                                str(task['completed']), task['title']])
