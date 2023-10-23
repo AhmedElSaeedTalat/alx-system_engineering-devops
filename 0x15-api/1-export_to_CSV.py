@@ -18,7 +18,7 @@ if __name__ == "__main__":
     tdo_res = tdo_res.json()
     file_name = employee_id + ".csv"
     with open(file_name, 'w') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, quotechar='"', quoting=csv.QUOTE_ALL)
         for task in tdo_res:
             if task['userId'] == int(employee_id):
                 writer.writerow([task['userId'], usr,
