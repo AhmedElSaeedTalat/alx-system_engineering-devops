@@ -7,17 +7,16 @@ def top_ten(subreddit):
     """ returns title of 10 hot posts """
     url = 'https://www.reddit.com/r/' + subreddit + '/hot.json'
     headers = {"user-agent": "me"}
-    data = requests.get(url, headers=headers)
+    params = {"limit": 10}
+    data = requests.get(url, headers=headers, params=params)
     if data.status_code == 404:
-        print('None')
+        print(None)
         return
     data = data.json()
     try:
-        length = len(data['data']['children'])
-        if length > 10:
-            length = 10
-        for i in range(length):
-            print(data['data']['children'][i]['data']['title'])
+        for item in data['data']['children']:
+            print(item['data']['title'])
         return
     except Exception:
         print('None')
+        return
