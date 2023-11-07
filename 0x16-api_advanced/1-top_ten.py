@@ -9,7 +9,7 @@ def top_ten(subreddit):
     headers = {"user-agent": "me"}
     data = requests.get(url, headers=headers)
     if data.status_code == 404:
-        print(None)
+        print('None')
         return
     data = data.json()
     try:
@@ -20,4 +20,4 @@ def top_ten(subreddit):
             print(data['data']['children'][i]['data']['title'])
         return
     except Exception:
-        print(None)
+        print('None')
