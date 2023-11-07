@@ -20,11 +20,12 @@ def count_words(subreddit, word_list, passed_after="", word_dict={}):
             title_list = full_title.split()
             for title in title_list:
                 for word in word_list:
-                    if title == word:
-                        if word in word_dict:
+                    if title.lower() == word.lower():
+                        if word.lower() in word_dict:
+                            word = word.lower()
                             word_dict[word] = word_dict[word] + 1
                         else:
-                            word_dict[word] = 1
+                            word_dict[word.lower()] = 1
         passed_after = data['data']['after']
         if passed_after is None:
             sorted_list = sorted(word_dict.items(), key=lambda a: a[1],
