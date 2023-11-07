@@ -12,6 +12,9 @@ def top_ten(subreddit):
         print(None)
         return
     data = data.json()
-    for i in range(10):
+    length = len(data['data']['children'])
+    if length > 10:
+        length = 10
+    for i in range(length):
         print(data['data']['children'][i]['data']['title'])
     return
