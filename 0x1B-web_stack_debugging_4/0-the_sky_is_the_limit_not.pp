@@ -1,3 +1,4 @@
+# edit limit of requests for nginx
 node default{
     exec {'set up limits':
         command  => 'sed -i "s/15/5000/g" /etc/default/nginx;
